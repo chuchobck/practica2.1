@@ -14,7 +14,7 @@ import {
   Res,
 } from '@nestjs/common';
 import type { Response } from 'express';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiQuery, ApiTags } from '@nestjs/swagger';
 import { ProductosService } from './productos.service.js';
 import { CrearProductoDto } from './dto/crear-producto.dto.js';
 import { ActualizarPrecioDto } from './dto/actualizar-precio.dto.js';
@@ -25,6 +25,7 @@ export class ProductosController {
   constructor(private readonly productosService: ProductosService) {}
 
   @Get()
+  @ApiQuery({ name: 'nombre', required: false })
   listar(@Query('nombre') nombre?: string) {
     return this.productosService.findAll(nombre);
   }

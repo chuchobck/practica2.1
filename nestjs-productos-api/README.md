@@ -2,6 +2,12 @@
 
 CRUD de productos con persistencia real en PostgreSQL (reemplaza el arreglo en memoria de la práctica anterior), siguiendo la guía `web-practica-bd.html`.
 
+## Despliegue en producción (Render)
+
+- API + Swagger: https://practica2-1-6kvj.onrender.com/swagger
+
+En el plan gratuito el servicio "duerme" tras un rato sin tráfico; la primera petición después de eso puede tardar 30–60 s en responder mientras arranca de nuevo. La base de datos empieza vacía (`GET /api/v1/productos` devuelve `[]`) hasta que crees productos con `POST`.
+
 ## Requisitos
 
 - Node.js 22+
